@@ -1,0 +1,130 @@
+// Graficas screen modernizado sin tocar la logica
+:host {
+  display: block;
+  font-family: Nexa, Arial, sans-serif;
+  --graficas-ink: #0f172a;
+  --graficas-muted: #4b5563;
+  --graficas-card: #ffffff;
+  --graficas-line: #e2e8f0;
+  --graficas-accent: #00b5e2;
+  --graficas-accent-dark: #005f86;
+  --graficas-bg: #f3f6fb;
+  --graficas-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.main-content-graficas {
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 991px) {
+  .main-content-graficas {
+    margin-left: 0;
+  }
+}
+
+.graficas-shell {
+  min-height: 100vh;
+  padding: clamp(24px, 3vw, 48px);
+  background:
+    radial-gradient(700px 420px at 8% 0%, rgba(0, 181, 226, 0.15), transparent 60%),
+    linear-gradient(180deg, #f9fbff 0%, var(--graficas-bg) 100%);
+  color: var(--graficas-ink);
+}
+
+.graficas-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.graficas-title h1 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+  margin: 0;
+  line-height: 1.15;
+  color: var(--graficas-ink);
+}
+
+.graficas-title p {
+  margin: 6px 0 0 0;
+  font-size: 1rem;
+  color: var(--graficas-muted);
+}
+
+.graficas-card {
+  background: var(--graficas-card);
+  border-radius: 18px;
+  box-shadow: var(--graficas-shadow);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: clamp(16px, 2vw, 28px);
+  margin-bottom: 24px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--graficas-line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+  margin: 0 0 4px 0;
+  color: var(--graficas-ink);
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--graficas-muted);
+  font-size: 0.95rem;
+}
+
+.graph-section,
+.user-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.graph {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  min-height: 260px;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .graficas-shell {
+    padding: 20px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .graph-section,
+  .user-section {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}

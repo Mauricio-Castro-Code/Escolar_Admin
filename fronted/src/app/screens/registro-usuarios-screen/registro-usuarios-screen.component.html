@@ -1,0 +1,128 @@
+<section class="login-page">
+  <div class="background-container">
+    <div class="background-image"></div>
+    <div class="background-overlay"></div>
+  </div>
+
+  <div class="content">
+    <header class="header">
+      <div class="logo-container">
+        <img src="/assets/images/small_logo.png" alt="Logo BUAP" class="logo-image" />
+        <span class="logo-text">BUAP</span>
+      </div>
+      <nav class="social-icons">
+        <a href="https://apps.apple.com/mx/app/buap/id6683299623" class="social-link" aria-label="Apple">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/>
+            <path d="M10 2c1 .5 2 2 2 5"/>
+          </svg>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=dcytic.appbuap" class="social-link" aria-label="Android">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+            <path d="M12 18h.01"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/BUAPoficial/?locale=es_LA" class="social-link" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/buapoficial/?hl=es" class="social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <div class="mitec-logo">
+        <div class="mitec-bars">
+          <div class="bar bar-blue-dark"></div>
+          <div class="bar bar-white"></div>
+          <div class="bar bar-blue-light"></div>
+          <div class="bar bar-gray"></div>
+        </div>
+      </div>
+
+      <h1 class="welcome-title">Registro de usuarios</h1>
+
+      <div class="registration-panel">
+        <div class="reg-shell">
+          <mat-card class="role-card">
+            <mat-card-header class="role-card-header">
+              <div class="actions-header-colum">
+                <ng-container *ngIf="!editar; else activo">
+                  <mat-card-title class="title-card">Registro de usuario</mat-card-title>
+                  <mat-card-subtitle class="subtitle-card">
+                    Selecciona el tipo para mostrar el formulario correspondiente
+                  </mat-card-subtitle>
+                </ng-container>
+                <ng-template #activo>
+                  <mat-card-title class="title-card">Editar de usuario</mat-card-title>
+                  <mat-card-subtitle class="subtitle-card">
+                    Modifica los datos del usuario seleccionado
+                  </mat-card-subtitle>
+                </ng-template>
+              </div>
+              <div class="actions-row">
+                <button mat-icon-button class="back-btn" (click)="goBack()">
+                  <mat-icon class="back-icon">arrow_back</mat-icon>
+                </button>
+              </div>
+            </mat-card-header>
+
+            <mat-card-content>
+              <div class="role-row">
+                <mat-radio-group aria-label="Tipo de usuario"
+                  [(ngModel)]="user.tipo_usuario"
+                  (change)="radioChange($event)"
+                  [disabled]="editar">
+
+                  <mat-radio-button
+                    class="role-pill"
+                    value="administrador"
+                    *ngIf="!facadeService.getUserGroup() || facadeService.getUserGroup() === 'administrador'">
+                    <mat-icon class="me-1" fontIcon="admin_panel_settings"></mat-icon>
+                    <span class="text-radio">Administrador</span>
+                  </mat-radio-button>
+
+                  <mat-radio-button class="role-pill" value="alumno">
+                    <mat-icon class="me-1" fontIcon="school"></mat-icon>
+                    <span class="text-radio">Alumno</span>
+                  </mat-radio-button>
+
+                  <mat-radio-button
+                    class="role-pill"
+                    value="maestro"
+                    *ngIf="!facadeService.getUserGroup() || facadeService.getUserGroup() === 'administrador' || facadeService.getUserGroup() === 'maestro'">
+                    <mat-icon class="me-1" fontIcon="person"></mat-icon>
+                    <span class="text-radio">Maestro</span>
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <div class="forms-area">
+            <app-registro-admin *ngIf="isAdmin" [rol]="tipo_user" [datos_user]="user"></app-registro-admin>
+            <app-registro-alumnos *ngIf="isAlumno" [rol]="tipo_user" [datos_user]="editar ? user : null"></app-registro-alumnos>
+            <app-registro-maestros *ngIf="isMaestro" [rol]="tipo_user" [datos_user]="editar ? user : null"></app-registro-maestros>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#" class="footer-link">Aviso de privacidad</a>
+      </div>
+      <div class="copyright">
+        © 2026 <a href="https://buap.mx" class="copyright-link">BUAP</a>.
+      </div>
+    </footer>
+  </div>
+</section>

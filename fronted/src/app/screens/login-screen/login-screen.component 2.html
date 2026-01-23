@@ -1,0 +1,73 @@
+<section class="login-shell">
+  <div class="login-card">
+    <div class="login-media">
+      <div class="media-content">
+        <span class="media-badge">Acceso seguro</span>
+        <h2 class="media-title">Sistema Escolar BUAP</h2>
+        <p class="media-text">Organiza tus materias, consulta calificaciones y mantente al dia desde un solo lugar.</p>
+        <div class="media-stats">
+          <div class="stat">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Disponibilidad</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">1 clic</span>
+            <span class="stat-label">Acceso rapido</span>
+          </div>
+        </div>
+      </div>
+      <img src="/assets/images/buap-fcc.jpg" alt="Ilustracion de bienvenida" class="media-image" />
+    </div>
+    <div class="login-panel">
+      <div class="login-brand">
+        <img src="/assets/images/escudoB.png" alt="Logo BUAP" class="logo-buap" />
+        <span class="brand-title">Sistema Escolar</span>
+      </div>
+      <h2 class="login-title">Iniciar sesion</h2>
+      <p class="login-subtitle">Ingresa los datos que registraste</p>
+      <form (ngSubmit)="login()" class="login-form" #form="ngForm">
+        <div class="form-group">
+          <label for="email">Correo electronico</label>
+          <div class="input-wrap">
+            <input
+              type="email"
+              [(ngModel)]="username"
+              name="username"
+              class="form-control"
+              id="email"
+              placeholder="nombre@correo.com"
+              autocomplete="username"
+            />
+          </div>
+          <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div>
+        </div>
+        <div class="form-group">
+          <label for="password">Contrasena</label>
+          <div class="input-wrap">
+            <input
+              [type]="type"
+              [(ngModel)]="password"
+              id="password"
+              name="password_user"
+              class="form-control pwd"
+              placeholder="Minimo 8 caracteres"
+              autocomplete="current-password"
+              (keyup.enter)="login()"
+            />
+            <span class="show-password" (click)="showPassword()">
+              <i [ngClass]="type == 'password' ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'"></i>
+            </span>
+          </div>
+          <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div>
+        </div>
+        <div class="form-links">
+          <a (click)="router.navigate(['olvide-contrasena'])">Olvidaste tu contrasena?</a>
+        </div>
+        <button class="btn-login" type="submit" [disabled]="load">Iniciar sesion</button>
+        <div class="form-register">
+          No tienes cuenta? <a (click)="registrar()">Registrate</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

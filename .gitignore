@@ -1,0 +1,12 @@
+.DS_Store
+
+# Frontend
+fronted/.angular/
+fronted/node_modules/
+
+# Backend
+backend/.venv/
+backend/venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/db.sqlite3

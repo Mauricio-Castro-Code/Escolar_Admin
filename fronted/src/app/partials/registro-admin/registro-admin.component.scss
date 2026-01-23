@@ -1,0 +1,161 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+}
+
+.section-registro {
+  width: min(900px, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.body-registro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+  gap: 1.4rem;
+  background: transparent;
+}
+
+.title-user{
+  font-size: 24px;
+  text-align: left;
+  font-family: Nexa-Bold, Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #111827;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+mat-form-field{
+  width: 100%!important;
+  margin-left: 0;
+  text-align: left!important;
+}
+
+//Para la sección de botones
+.section-buttons{
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+.btn-primary {
+  width: 208px;
+  height: 48px;
+  background-color: #005f86!important;
+  border-color: #005f86!important;
+  border-radius: 8px!important;
+  opacity: 1;
+  //Fuente
+  text-align: center;
+  font-family: Nexa-Bold, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  background-color: #004a6b!important;
+  border-color: #004a6b!important;
+
+}
+
+.btn-danger{
+  width: 208px;
+  height: 48px;
+  border-radius: 8px!important;
+  opacity: 1;
+  //Fuente
+  text-align: center;
+  font-family: Nexa-Bold, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.mat-hint-margin {
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Ajustes para el formulario en dispositivos móviles
+   ========================= */
+
+/* Título del formulario (en móvil) */
+@media (max-width: 700px) {
+  .title-user {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); /* Asegura que el tamaño sea adecuado */
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-align: center; /* Centrado en dispositivos móviles */
+    white-space: normal; /* Evita que el texto se divida o se sobreponga */
+  }
+
+  .title-materias {
+    font-size: 1.2rem; /* Asegura que el tamaño sea adecuado en dispositivos pequeños */
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .select-materias {
+    width: 100%;
+    gap: 0.5rem;
+    padding-left: 1.5rem;
+  }
+
+  mat-form-field {
+    width: 100% !important; /* Hace que el formulario ocupe todo el ancho */
+    margin-left: 0; /* Elimina el margen de la izquierda en móviles */
+  }
+
+  /* Ajuste para los botones */
+  .btn-primary, .btn-danger {
+    width: 100%; /* Ancho completo para los botones en móviles */
+    font-size: 14px; /* Reducción de tamaño en botones */
+    height: 48px;
+  }
+
+  .section-buttons {
+    flex-direction: column; /* Coloca los botones en columna en pantallas pequeñas */
+    gap: 1rem; /* Espaciado entre los botones */
+  }
+}
+
+/* =========================
+   Ajustes adicionales para la vista móvil (≤ 700px)
+   ========================= */
+@media (max-width: 700px) {
+
+  .mat-form-field {
+    width: 100% !important;
+    margin-left: 0; /* Elimina el margen */
+  }
+
+}
+
+.invalid-feedback, .feedback-error {
+  margin-left: 0;
+}

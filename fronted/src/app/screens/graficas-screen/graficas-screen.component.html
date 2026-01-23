@@ -1,0 +1,64 @@
+<section class="graficas-shell main-content-graficas">
+  <div class="graficas-hero">
+    <div class="graficas-title">
+      <h1>Analisis de datos del sistema</h1>
+      <p>Vista general para seguimiento academico y operativo.</p>
+    </div>
+  </div>
+
+  <div class="graficas-card">
+    <div class="card-header">
+      <div>
+        <h2>Analisis de materias</h2>
+        <p>Comparativo de materias y eventos academicos registrados.</p>
+      </div>
+    </div>
+
+    <div class="graph-section">
+      <div class="graph">
+        <canvas
+          baseChart
+          type="line"
+          [data]="lineChartData"
+          [plugins]="lineChartPlugins"
+          [options]="lineChartOption"></canvas>
+      </div>
+      <div class="graph">
+        <canvas
+          baseChart
+          type="bar"
+          [data]="barChartData"
+          [plugins]="barChartPlugins"
+          [options]="barChartOption"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="graficas-card">
+    <div class="card-header">
+      <div>
+        <h2>Analisis de usuarios</h2>
+        <p>Distribucion y participacion por perfiles.</p>
+      </div>
+    </div>
+
+    <div class="user-section">
+      <div class="graph">
+        <canvas
+          baseChart
+          type="pie"
+          [data]="pieChartData"
+          [plugins]="pieChartPlugins"
+          [options]="pieChartOption"></canvas>
+      </div>
+      <div class="graph">
+        <canvas
+          baseChart
+          type="doughnut"
+          [data]="doughnutChartData"
+          [plugins]="doughnutChartPlugins"
+          [options]="doughnutChartOption"></canvas>
+      </div>
+    </div>
+  </div>
+</section>

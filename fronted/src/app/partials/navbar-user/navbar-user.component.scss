@@ -1,0 +1,261 @@
+// Palette CSS variables
+:root {
+  --background-main: #0b1f3a;
+  --sidebar-bg: #0f2d57;
+  --navbar-bg: #0b1f3a;
+  --text-main: #f5f7fb;
+  --accent: #00b5e2;
+  --table-bg: #0f172a;
+  --table-header-bg: #1f2b45;
+}
+
+.navbar-sidebar-wrapper {
+  background: var(--background-main);
+}
+
+// =====================
+// PALETTE CSS VARIABLES
+// =====================
+[data-theme="dark"] {
+  --background-main: #0b1f3a;
+  --sidebar-bg: #0f2d57;
+  --navbar-bg: #0b1f3a;
+  --text-main: #f5f7fb;
+  --table-bg: #0f172a;
+  --table-header-bg: #1f2b45;
+}
+
+// =====================
+// LAYOUT WRAPPERS
+// =====================
+.navbar-sidebar-wrapper {
+  width: 100vw;
+  min-height: 56px;
+  background: var(--background-main);
+  position: relative;
+  z-index: 100;
+}
+
+.dashboard-content {
+  background: var(--background-main);
+  color: var(--text-main);
+}
+
+.main-content {
+  margin-left: 220px;
+  margin-top: 56px;
+  padding: 2rem 0 0 0;
+  min-height: calc(100vh - 56px);
+  transition: margin 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.scoop-side-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  z-index: 101;
+  background: var(--sidebar-bg);
+  color: #e4ecfa;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scoop-navbar {
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  height: 56px;
+  width: calc(100vw - 220px);
+  z-index: 102;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--navbar-bg) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+  position: fixed;
+}
+
+// =====================
+// NAVBAR CONTENT
+// =====================
+.scoop-navbar-logo {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-right: 2rem;
+  letter-spacing: 2px;
+  font-family: 'NexaBold', 'Montserrat', 'Arial', sans-serif;
+}
+
+.scoop-navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.scoop-navbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sidebar-bg);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.scoop-user-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  min-width: 140px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.scoop-user-menu-btn {
+  background: none;
+  border: none;
+  color: #222;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.18s;
+}
+
+.scoop-user-menu-btn:hover {
+  background: #f0f4fa;
+}
+
+// =====================
+// NAVBAR LIST & ITEMS
+// =====================
+.scoop-navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scoop-navbar-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  font-size: 1.08rem;
+  color: #e4ecfa;
+  background: transparent;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  transition: background 0.18s, color 0.18s;
+}
+
+.scoop-navbar-item.active,
+.scoop-navbar-item:hover {
+  background: rgba(0, 181, 226, 0.18);
+  color: #fff;
+}
+
+.scoop-navbar-item .material-icons {
+  margin-right: 0.7rem;
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.18s;
+}
+
+.scoop-navbar-item.active .material-icons,
+.scoop-navbar-item:hover .material-icons {
+  color: #fff;
+}
+
+.scoop-navbar-badge {
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.scoop-logout-btn {
+  margin: 2rem 1rem 0 1rem;
+  width: calc(100% - 2rem);
+  background: #102a4d;
+  color: #e4ecfa;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.scoop-logout-btn:hover {
+  background: #173764;
+  color: #fff;
+}
+
+// =====================
+// DASHBOARD TOGGLE BUTTON
+// =====================
+.dashboard-toggle-btn {
+  background: var(--sidebar-bg);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboard-toggle-btn:hover {
+  background: #1a3a6b;
+}
+
+// =====================
+// RESPONSIVE
+// =====================
+@media (max-width: 991px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 56px;
+    padding: 1rem 0 0 0;
+    min-height: calc(100vh - 56px);
+  }
+}

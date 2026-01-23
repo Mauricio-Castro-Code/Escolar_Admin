@@ -1,0 +1,217 @@
+// Alumnos screen modernizado sin tocar la logica
+:host {
+  display: block;
+  font-family: Nexa, Arial, sans-serif;
+  --alumnos-ink: #0f172a;
+  --alumnos-muted: #4b5563;
+  --alumnos-card: #ffffff;
+  --alumnos-line: #e2e8f0;
+  --alumnos-accent: #00b5e2;
+  --alumnos-accent-dark: #005f86;
+  --alumnos-bg: #f3f6fb;
+  --alumnos-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --table-bg: #ffffff;
+  --text-main: #0f172a;
+  --table-header-border: #d0d7e2;
+}
+
+.main-content-alumnos {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+
+@media (max-width: 991px) {
+  .main-content-alumnos {
+    margin-left: 0;
+  }
+}
+
+.alumnos-shell {
+  min-height: 100vh;
+  padding: clamp(24px, 3vw, 48px);
+  background:
+    radial-gradient(700px 420px at 8% 0%, rgba(0, 181, 226, 0.15), transparent 60%),
+    linear-gradient(180deg, #f9fbff 0%, var(--alumnos-bg) 100%);
+  color: var(--alumnos-ink);
+}
+
+.alumnos-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.alumnos-title h1 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+  margin: 0;
+  line-height: 1.15;
+  color: var(--alumnos-ink);
+}
+
+.alumnos-title p {
+  margin: 6px 0 0 0;
+  font-size: 1rem;
+  color: var(--alumnos-muted);
+}
+
+.user-name {
+  color: var(--alumnos-accent-dark);
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.meta-pill {
+  background: rgba(0, 181, 226, 0.12);
+  color: var(--alumnos-accent-dark);
+  border: 1px solid rgba(0, 181, 226, 0.35);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.alumnos-card {
+  background: var(--alumnos-card);
+  border-radius: 18px;
+  box-shadow: var(--alumnos-shadow);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: clamp(16px, 2vw, 28px);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--alumnos-line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+  margin: 0 0 4px 0;
+  color: var(--alumnos-ink);
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--alumnos-muted);
+  font-size: 0.95rem;
+}
+
+.filter-name {
+  width: 100%;
+  max-width: 320px;
+}
+
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  min-height: 1px;
+  margin: 0 auto;
+  background: var(--table-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  min-width: 1200px;
+  width: 100%;
+  padding-bottom: 1.5rem;
+}
+
+::ng-deep .mat-mdc-table {
+  table-layout: fixed !important;
+}
+
+.mat-mdc-header-cell {
+  border-bottom-color: var(--table-header-border);
+  font-family: Nexa-Bold !important;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+  color: var(--text-main) !important;
+}
+
+.mat-mdc-cell {
+  text-align: left;
+  font-family: Nexa !important;
+  font-size: 15px !important;
+  letter-spacing: 0px !important;
+  color: var(--text-main) !important;
+  opacity: 1 !important;
+}
+
+.td-editar {
+  color: var(--alumnos-accent-dark) !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  text-align: center;
+}
+
+.td-editar:hover {
+  color: #004a6b !important;
+  font-size: 20px !important;
+  text-align: center;
+}
+
+.td-eliminar {
+  color: #e84150 !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  text-align: center;
+}
+
+.td-eliminar:hover {
+  color: #ce1626 !important;
+  font-size: 20px !important;
+  text-align: center;
+}
+
+.alert-warning {
+  font-family: Nexa, Arial, sans-serif;
+  font-size: 16px;
+  color: #7c2d12;
+  text-align: center;
+  background: #fff3cd;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .alumnos-shell {
+    padding: 20px;
+  }
+
+  .alumnos-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-name {
+    max-width: 100%;
+  }
+
+  table {
+    min-width: 900px;
+  }
+}
