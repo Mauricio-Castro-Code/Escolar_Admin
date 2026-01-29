@@ -1,8 +1,8 @@
 // Palette CSS variables
 :root {
-  --background-main: #f5f7fb;
-  --sidebar-bg: #001a35; // Rich Strong Navy
-  --navbar-bg: #005f86; // Brand Blue
+  --background-main: #0b1f3a;
+  --sidebar-bg: #0f2d57;
+  --navbar-bg: #0b1f3a;
   --text-main: #f5f7fb;
   --accent: #00b5e2;
   --table-bg: #0f172a;
@@ -18,9 +18,11 @@
 // =====================
 [data-theme="dark"] {
   --background-main: #0b1f3a;
-  --sidebar-bg: #001a35;
-  --navbar-bg: #005f86;
+  --sidebar-bg: #0f2d57;
+  --navbar-bg: #0b1f3a;
   --text-main: #f5f7fb;
+  --table-bg: #0f172a;
+  --table-header-bg: #1f2b45;
 }
 
 // =====================
@@ -36,7 +38,7 @@
 
 .dashboard-content {
   background: var(--background-main);
-  color: #222;
+  color: var(--text-main);
 }
 
 .main-content {
@@ -61,8 +63,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* Visual depth for sidebar */
-  background: linear-gradient(180deg, var(--sidebar-bg) 0%, #000c1a 100%);
 }
 
 .scoop-navbar {
@@ -78,7 +78,7 @@
   justify-content: flex-start;
   background: var(--navbar-bg) !important;
   color: var(--text-main) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
   position: fixed;
 }
 
@@ -90,8 +90,6 @@
   font-size: 2.2rem;
   color: var(--text-main);
   margin-right: 2rem;
-  margin-left: 2rem;
-  /* Added Spacing from Left */
   letter-spacing: 2px;
   font-family: 'NexaBold', 'Montserrat', 'Arial', sans-serif;
 }
@@ -101,18 +99,15 @@
   align-items: center;
   gap: 1.2rem;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .scoop-navbar-avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #00b5e2 !important;
-  /* Force Cyan */
-  color: #ffffff !important;
-  border: 2px solid #ffffff;
-  /* White outline */
+  background: var(--sidebar-bg);
+  color: #fff;
   font-size: 1.1rem;
   font-weight: bold;
   display: flex;
@@ -121,8 +116,6 @@
   cursor: pointer;
   margin-right: 0.5rem;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0, 181, 226, 0.4);
-  /* Glow */
 }
 
 .scoop-user-menu {
@@ -176,27 +169,23 @@
   cursor: pointer;
   padding: 1rem 1.2rem;
   font-size: 1.08rem;
-  color: #ffffff;
+  color: #e4ecfa;
   background: transparent;
   border-radius: 8px;
   margin-bottom: 0.3rem;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition: background 0.18s, color 0.18s;
 }
 
-/* Glass Hover */
 .scoop-navbar-item.active,
 .scoop-navbar-item:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 181, 226, 0.18);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .scoop-navbar-item .material-icons {
   margin-right: 0.7rem;
   font-size: 1.2em;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   transition: color 0.18s;
 }
 
@@ -218,9 +207,9 @@
 .scoop-logout-btn {
   margin: 2rem 1rem 0 1rem;
   width: calc(100% - 2rem);
-  background: rgba(0, 0, 0, 0.4);
+  background: #102a4d;
   color: #e4ecfa;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
   border-radius: 8px;
   padding: 1rem 1.2rem;
   font-size: 1.08rem;
@@ -232,7 +221,7 @@
 }
 
 .scoop-logout-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #173764;
   color: #fff;
 }
 
@@ -268,54 +257,5 @@
     margin-top: 56px;
     padding: 1rem 0 0 0;
     min-height: calc(100vh - 56px);
-  }
-
-  .scoop-navbar-logo {
-    margin-left: 0.5rem;
-    /* Less margin on mobile */
-    font-size: 1.8rem;
-  }
-
-  /* RESET Navbar for Mobile: Full Width */
-  .scoop-navbar {
-    left: 0 !important;
-    width: 100vw !important;
-    padding-left: 1rem;
-    /* Add some padding for the hamburger button */
-  }
-
-  /* Sidebar Hidden by Default on Mobile */
-  .scoop-side-navbar {
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
-    top: 56px;
-    /* Below navbar */
-    height: calc(100vh - 56px);
-  }
-
-  /* Sidebar Visible when Open */
-  .scoop-side-navbar.mobile-open {
-    transform: translateX(0);
-  }
-
-  /* Overlay Styles */
-  .mobile-sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    backdrop-filter: blur(2px);
-  }
-
-  .mobile-sidebar-overlay.mobile-open {
-    opacity: 1;
-    pointer-events: auto;
   }
 }
