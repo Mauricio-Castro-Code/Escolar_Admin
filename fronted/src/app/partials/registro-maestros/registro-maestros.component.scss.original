@@ -34,22 +34,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 0.5rem;
-  background: transparent;
-}
-
-/* Glass Card Styles */
-.white-card-wrapper {
-  background-color: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   gap: 1.4rem;
+  background: transparent;
 }
 
 /* Títulos */
@@ -61,8 +47,7 @@
   color: #111827;
   text-transform: capitalize;
   opacity: 1;
-  white-space: nowrap;
-  /* Evita que se divida en dos líneas */
+  white-space: nowrap; /* Evita que se divida en dos líneas */
 }
 
 /* Título de materias */
@@ -101,8 +86,7 @@ mat-form-field {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0rem;
-  /* Removed padding */
+  padding-bottom: 3rem;
 }
 
 /* Botón primario */
@@ -155,48 +139,38 @@ mat-form-field {
 /* Cambiar el color de fondo y borde cuando el checkbox está seleccionado */
 ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__background,
 ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__ripple {
-  background-color: #005f86 !important;
-  /* Fondo azul cuando está seleccionado */
-  border-color: #005f86 !important;
-  /* Borde azul cuando está seleccionado */
+  background-color: #005f86 !important; /* Fondo azul cuando está seleccionado */
+  border-color: #005f86 !important; /* Borde azul cuando está seleccionado */
 }
 
 /* Cambiar el color de la caja de verificación (cuando está en focus) */
 ::ng-deep .mat-mdc-checkbox:focus .mdc-checkbox__background {
-  border-color: #004a6b !important;
-  /* Color del borde cuando el checkbox tiene focus */
+  border-color: #004a6b !important; /* Color del borde cuando el checkbox tiene focus */
 }
 
 /* Aumentar el tamaño del checkbox */
 ::ng-deep .mat-mdc-checkbox .mdc-checkbox__ripple {
-  transform: scale(1.2);
-  /* Aumentar el tamaño del ripple */
+  transform: scale(1.2); /* Aumentar el tamaño del ripple */
 }
 
 /* Estilo del icono dentro del checkbox (marca de verificación) */
 ::ng-deep .mat-mdc-checkbox .mdc-checkbox__checkmark {
-  transform: scale(1.3);
-  /* Aumentar el tamaño de la marca de verificación */
-  stroke-width: 3px;
-  /* Aumentar el grosor de la marca de verificación */
+  transform: scale(1.3); /* Aumentar el tamaño de la marca de verificación */
+  stroke-width: 3px; /* Aumentar el grosor de la marca de verificación */
 }
 
 /* Estilo cuando se pasa el mouse (hover) sobre el checkbox */
 ::ng-deep .mat-mdc-checkbox:hover .mdc-checkbox__background {
-  background-color: rgba(0, 95, 134, 0.1);
-  /* Fondo suave al pasar el ratón */
+  background-color: rgba(0, 95, 134, 0.1); /* Fondo suave al pasar el ratón */
 }
 
 /* Estilo para el texto del label */
 .d-checkbox-nombre {
   margin-top: 0.4rem;
-  font-size: 1rem;
-  /* Aumentar el tamaño de la fuente */
-  color: #111827;
-  /* Color del texto */
+  font-size: 1rem; /* Aumentar el tamaño de la fuente */
+  color: #111827; /* Color del texto */
   font-weight: 500;
-  transition: color 0.3s ease;
-  /* Suaviza el cambio de color */
+  transition: color 0.3s ease; /* Suaviza el cambio de color */
 }
 
 /* =========================
@@ -205,24 +179,16 @@ mat-form-field {
 
 /* Título del formulario (en móvil) */
 @media (max-width: 700px) {
-  .white-card-wrapper {
-    padding: 1rem;
-  }
-
   .title-user {
-    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-    /* Asegura que el tamaño sea adecuado */
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); /* Asegura que el tamaño sea adecuado */
     line-height: 1.2;
     margin-bottom: 0.5rem;
-    text-align: center;
-    /* Centrado en dispositivos móviles */
-    white-space: normal;
-    /* Evita que el texto se divida o se sobreponga */
+    text-align: center; /* Centrado en dispositivos móviles */
+    white-space: normal; /* Evita que el texto se divida o se sobreponga */
   }
 
   .title-materias {
-    font-size: 1.2rem;
-    /* Asegura que el tamaño sea adecuado en dispositivos pequeños */
+    font-size: 1.2rem; /* Asegura que el tamaño sea adecuado en dispositivos pequeños */
     text-align: left;
     margin-bottom: 1rem;
   }
@@ -234,27 +200,20 @@ mat-form-field {
   }
 
   mat-form-field {
-    width: 100% !important;
-    /* Hace que el formulario ocupe todo el ancho */
-    margin-left: 0;
-    /* Elimina el margen de la izquierda en móviles */
+    width: 100% !important; /* Hace que el formulario ocupe todo el ancho */
+    margin-left: 0; /* Elimina el margen de la izquierda en móviles */
   }
 
   /* Ajuste para los botones */
-  .btn-primary,
-  .btn-danger {
-    width: 100%;
-    /* Ancho completo para los botones en móviles */
-    font-size: 14px;
-    /* Reducción de tamaño en botones */
+  .btn-primary, .btn-danger {
+    width: 100%; /* Ancho completo para los botones en móviles */
+    font-size: 14px; /* Reducción de tamaño en botones */
     height: 48px;
   }
 
   .section-buttons {
-    flex-direction: column;
-    /* Coloca los botones en columna en pantallas pequeñas */
-    gap: 1rem;
-    /* Espaciado entre los botones */
+    flex-direction: column; /* Coloca los botones en columna en pantallas pequeñas */
+    gap: 1rem; /* Espaciado entre los botones */
   }
 }
 
@@ -265,13 +224,7 @@ mat-form-field {
 
   .mat-form-field {
     width: 100% !important;
-    margin-left: 0;
-    /* Elimina el margen */
+    margin-left: 0; /* Elimina el margen */
   }
 
-}
-
-.invalid-feedback,
-.feedback-error {
-  margin-left: 0;
 }

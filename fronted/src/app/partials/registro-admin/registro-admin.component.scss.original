@@ -22,26 +22,16 @@
 
 .body-registro {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding-top: 0.5rem;
+  gap: 1.4rem;
   background: transparent;
 }
 
-/* Glass Card Styles */
-.white-card-wrapper {
-  background-color: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.title-user {
+.title-user{
   font-size: 24px;
   text-align: left;
   font-family: Nexa-Bold, Arial, sans-serif;
@@ -51,30 +41,29 @@
   opacity: 1;
 }
 
-mat-form-field {
-  width: 100% !important;
+mat-form-field{
+  width: 100%!important;
   margin-left: 0;
-  text-align: left !important;
+  text-align: left!important;
 }
 
 //Para la sección de botones
-.section-buttons {
+.section-buttons{
   width: 100%;
   margin-left: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0rem;
-  /* Removed padding since it's inside card now */
+  padding-bottom: 3rem;
 }
 
 .btn-primary {
   width: 208px;
   height: 48px;
-  background-color: #005f86 !important;
-  border-color: #005f86 !important;
-  border-radius: 8px !important;
+  background-color: #005f86!important;
+  border-color: #005f86!important;
+  border-radius: 8px!important;
   opacity: 1;
   //Fuente
   text-align: center;
@@ -87,15 +76,15 @@ mat-form-field {
 }
 
 .btn-primary:hover {
-  background-color: #004a6b !important;
-  border-color: #004a6b !important;
+  background-color: #004a6b!important;
+  border-color: #004a6b!important;
 
 }
 
-.btn-danger {
+.btn-danger{
   width: 208px;
   height: 48px;
-  border-radius: 8px !important;
+  border-radius: 8px!important;
   opacity: 1;
   //Fuente
   text-align: center;
@@ -117,24 +106,16 @@ mat-form-field {
 
 /* Título del formulario (en móvil) */
 @media (max-width: 700px) {
-  .white-card-wrapper {
-    padding: 1rem;
-  }
-
   .title-user {
-    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-    /* Asegura que el tamaño sea adecuado */
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); /* Asegura que el tamaño sea adecuado */
     line-height: 1.2;
     margin-bottom: 0.5rem;
-    text-align: center;
-    /* Centrado en dispositivos móviles */
-    white-space: normal;
-    /* Evita que el texto se divida o se sobreponga */
+    text-align: center; /* Centrado en dispositivos móviles */
+    white-space: normal; /* Evita que el texto se divida o se sobreponga */
   }
 
   .title-materias {
-    font-size: 1.2rem;
-    /* Asegura que el tamaño sea adecuado en dispositivos pequeños */
+    font-size: 1.2rem; /* Asegura que el tamaño sea adecuado en dispositivos pequeños */
     text-align: left;
     margin-bottom: 1rem;
   }
@@ -146,27 +127,20 @@ mat-form-field {
   }
 
   mat-form-field {
-    width: 100% !important;
-    /* Hace que el formulario ocupe todo el ancho */
-    margin-left: 0;
-    /* Elimina el margen de la izquierda en móviles */
+    width: 100% !important; /* Hace que el formulario ocupe todo el ancho */
+    margin-left: 0; /* Elimina el margen de la izquierda en móviles */
   }
 
   /* Ajuste para los botones */
-  .btn-primary,
-  .btn-danger {
-    width: 100%;
-    /* Ancho completo para los botones en móviles */
-    font-size: 14px;
-    /* Reducción de tamaño en botones */
+  .btn-primary, .btn-danger {
+    width: 100%; /* Ancho completo para los botones en móviles */
+    font-size: 14px; /* Reducción de tamaño en botones */
     height: 48px;
   }
 
   .section-buttons {
-    flex-direction: column;
-    /* Coloca los botones en columna en pantallas pequeñas */
-    gap: 1rem;
-    /* Espaciado entre los botones */
+    flex-direction: column; /* Coloca los botones en columna en pantallas pequeñas */
+    gap: 1rem; /* Espaciado entre los botones */
   }
 }
 
@@ -177,13 +151,11 @@ mat-form-field {
 
   .mat-form-field {
     width: 100% !important;
-    margin-left: 0;
-    /* Elimina el margen */
+    margin-left: 0; /* Elimina el margen */
   }
 
 }
 
-.invalid-feedback,
-.feedback-error {
+.invalid-feedback, .feedback-error {
   margin-left: 0;
 }
