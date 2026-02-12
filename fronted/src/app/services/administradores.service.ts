@@ -172,7 +172,7 @@ export class AdministradoresService {
   }
 
   // Servicio para obtener el total de usuarios registrados por rol
-  public getTotalUsuarios(): Observable<any>{
+  public getTotalUsuarios(): Observable<any> {
     const token = this.facadeService.getSessionToken();
     let headers: HttpHeaders;
     if (token) {

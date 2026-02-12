@@ -130,8 +130,7 @@
 }
 
 .bar-blue-dark {
-  background-color: #005F86;
-  /* Pantone 302 C */
+  background-color: #005F86; /* Pantone 302 C */
 }
 
 .bar-white {
@@ -139,13 +138,11 @@
 }
 
 .bar-blue-light {
-  background-color: #00B5E2;
-  /* Pantone 306 C */
+  background-color: #00B5E2; /* Pantone 306 C */
 }
 
 .bar-gray {
-  background-color: #6D6E71;
-  /* Gris lobo */
+  background-color: #6D6E71; /* Gris lobo */
 }
 
 .mitec-text {
@@ -172,15 +169,11 @@
 /* Registration Panel */
 .registration-panel {
   width: min(980px, 100%);
-  background: rgba(255, 255, 255, 0.85);
-  /* Brighter/Whiter */
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 24px;
   padding: clamp(16px, 2vw, 28px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
-  /* Reduced blur */
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  /* Shinier border */
+  backdrop-filter: blur(6px);
 }
 
 .reg-shell {
@@ -216,9 +209,9 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 12px 60px;
+  gap: 12px 20px;
   margin-top: 12px;
 }
 
@@ -278,93 +271,38 @@
   width: 100%;
 }
 
-/* Fix Inputs Glitch Globally in this screen */
-::ng-deep input.mat-input-element {
-  caret-color: #005f86 !important;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: rgba(0, 0, 0, 0.12);
-}
-
-::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: #005f86 !important;
-}
-
 /* Estilos Material Radio */
 .mat-icon {
   width: 100%;
   height: 100%;
 }
 
-/* 
-   MDC Variable Overrides 
-   Targeting .role-pill (applied to mat-radio-button)
-   This overrides component-level variables for this specific instance.
-*/
-.role-pill {
-  /* Active / Selected Colors (Blue) */
-  --mdc-radio-selected-focus-icon-color: var(--brand-blue-dark);
-  --mdc-radio-selected-hover-icon-color: var(--brand-blue-dark);
-  --mdc-radio-selected-icon-color: var(--brand-blue-dark);
-  --mdc-radio-selected-pressed-icon-color: var(--brand-blue-dark);
-  --mat-radio-checked-ripple-color: var(--brand-blue-dark);
-
-  /* Disabled Colors (Gray) */
-  --mdc-radio-disabled-selected-icon-color: var(--brand-gray);
-  --mdc-radio-disabled-unselected-icon-color: var(--brand-gray);
-}
-
-/* Icon Styling */
-::ng-deep .role-pill mat-icon {
+::ng-deep .mat-mdc-radio-button mat-icon {
   text-align: center;
   font-size: 2.5rem;
   color: var(--brand-blue-dark);
-  /* Default "Active" Blue */
   transition: color 0.3s ease;
 }
 
-/* Text Styling */
-.text-radio {
-  width: 100%;
-  font-size: 1.1rem;
-  font-family: Nexa, Arial, sans-serif;
-  color: var(--brand-blue-dark);
-  /* Default "Active" Blue */
-  font-weight: 600;
-}
-
-/* Disabled State Handling for Content */
-::ng-deep .role-pill.mat-mdc-radio-disabled {
-  opacity: 1 !important;
-  /* Ensure visibility */
-}
-
-::ng-deep .role-pill.mat-mdc-radio-disabled mat-icon {
-  color: var(--brand-gray) !important;
-}
-
-.role-pill.mat-mdc-radio-disabled .text-radio {
-  color: var(--brand-gray) !important;
-}
-
-/* Hover Effect */
-::ng-deep .role-pill:hover mat-icon {
+::ng-deep .mat-mdc-radio-button:hover mat-icon {
   color: var(--brand-blue-dark);
 }
 
-::ng-deep .role-pill.mat-mdc-radio-disabled:hover mat-icon {
-  color: var(--brand-gray);
-}
-
-/* Form Field Text */
 ::ng-deep .mat-mdc-radio-button .mdc-form-field {
   color: #231f20;
   font-family: Nexa;
   font-size: 20px;
 }
 
-/* Base Radio Layout */
+::ng-deep .mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: var(--brand-blue-dark);
+  --mdc-radio-selected-hover-icon-color: var(--brand-blue-dark);
+  --mdc-radio-selected-icon-color: var(--brand-blue-dark);
+  --mdc-radio-selected-pressed-icon-color: var(--brand-blue-dark);
+  --mat-radio-ripple-color: #000;
+  --mat-radio-checked-ripple-color: var(--brand-blue-dark);
+}
+
 ::ng-deep .mdc-radio {
   display: inline-block;
   position: relative;

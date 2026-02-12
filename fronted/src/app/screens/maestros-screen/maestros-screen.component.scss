@@ -29,9 +29,10 @@
 .maestros-shell {
   min-height: 100vh;
   padding: clamp(24px, 3vw, 48px);
-  background:
+  /* background:
     radial-gradient(700px 420px at 8% 0%, rgba(0, 181, 226, 0.15), transparent 60%),
-    linear-gradient(180deg, #f9fbff 0%, var(--maestros-bg) 100%);
+    linear-gradient(180deg, #f9fbff 0%, var(--maestros-bg) 100%); */
+  background: white;
   color: var(--maestros-ink);
 }
 
